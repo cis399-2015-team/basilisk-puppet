@@ -1,4 +1,4 @@
-node ip-10-0-3-62 {
+node ip-10-0-3-183 {
     cron { "puppet update":
 	    command => "cd /etc/puppet && git pull -q origin master",
 	    user    => root,
