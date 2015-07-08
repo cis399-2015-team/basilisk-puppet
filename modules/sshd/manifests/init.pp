@@ -42,9 +42,4 @@ class sshd {
       type => 'ssh-rsa',
       key  => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDXXqPHGsCYmzeoF5+3/tq3SA4BFT4iKIDb8VyVQ123bSx2gXsK9h6dmYyv9Jn9LMEi0+DZ6/cc7lkGCcrrJVFM1PSTYtjVwwWobIilJYTjZFMCVXE6HFifxe0f3htwyXHDlR1sNRS8LfJXdYu7mN8/BLOlh76O/GfyY/GRnvwvft/S0uUcAm3x53FSRgSYo6q0ynR+yw9WX9OYimoWtIlsOOjLlWP+redeZmAkALdr9gquqyqWTU0dHdIPp3fHIJVtFZHpbye2OS79tyOMfzTCo4SH0lmfhAQlFAiheGkK1wbJ3/uIMpZVCLcJmbHsSg4M7P35z/ZO/gWzp6+ZNRTt',
     }
-
-    user { 'ubuntu':
-        ensure => present,
-        purge_ssh_keys => true,
-    }
 }
