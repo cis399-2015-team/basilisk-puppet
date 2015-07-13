@@ -10,6 +10,7 @@ node ip-10-0-3-42 {
 
 node ip-10-0-3-20 {
     include sshd
+    include httpd
 }
 
 node ip-10-0-3-110 {
