@@ -19,7 +19,7 @@ class apache2 {
         require => Package['apache2'],
     }
 
-    service { 'httpd':
+    service { 'apache2':
         enable    => true,
         ensure    => running,
         require   => [ Package['apache2'],
