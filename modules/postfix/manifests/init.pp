@@ -3,8 +3,12 @@ class postfix {
         'postfix': ensure => installed;
     }
 
-    file { '/etc/postfix/master.cf':
-        source  => 'puppet:///modules/postfix/master.cf',
+    package {
+        'mailutils': ensure => installed;
+    }
+
+    file { '/etc/postfix/main.cf':
+        source  => 'puppet:///modules/postfix/main.cf',
         mode    => 644,
         owner   => root,
         group   => root,
@@ -15,7 +19,7 @@ class postfix {
         enable    => true,
         ensure    => running,
         require   => [ Package['postfix'],
-                       File['/etc/postfix/master.cf'] ],
-        subscribe => File['/etc/postfix/master.cf'],
+                       File['/etc/postfix/main.cf'] ],
+        subscribe => File['/etc/postfix/main.cf'],
     }
 }
