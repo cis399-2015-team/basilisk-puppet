@@ -32,7 +32,7 @@ alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 
 myhostname = ec2-52-27-200-153.us-west-2.compute.amazonaws.com
-#mydomain = us-west-2.compute.amazonaws.com
+mydomain = ec2-52-27-200-153.us-west-2.compute.amazonaws.com
 myorigin = $myhostname
 
 mydestination = ec2-52-27-180-204.us-west-2.compute.amazonaws.com, ip-10-0-3-20.aws.amazon.com, ip-10-0-3-20.us-west-2.compute.internal, localhost.us-west-2.compute.internal, localhost
