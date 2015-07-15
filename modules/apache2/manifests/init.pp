@@ -24,7 +24,7 @@ class apache2 {
         ensure    => running,
         require   => [ Package['apache2'],
                        File['/etc/apache2/apache2.conf'],
-                       File['/etc/apache2/index.html']],
+                       File['/var/www/html/index.html']],
         subscribe => File['/etc/apache2/apache2.conf'],
     }
 }
