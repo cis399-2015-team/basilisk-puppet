@@ -7,22 +7,6 @@ class postfix {
         'mailutils': ensure => installed;
     }
 
-    file { '/etc/hosts':
-        source  => 'puppet:///modules/postfix/hosts',
-        mode    => 644,
-        owner   => root,
-        group   => root,
-        require => Package['postfix'],
-    }
-
-    file { '/etc/hostname':
-        source  => 'puppet:///modules/postfix/hostname',
-        mode    => 644,
-        owner   => root,
-        group   => root,
-        require => Package['postfix'],
-    }
-
     file { '/etc/postfix/main.cf':
         source  => 'puppet:///modules/postfix/main.cf',
         mode    => 644,
