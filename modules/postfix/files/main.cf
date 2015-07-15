@@ -31,7 +31,7 @@ smtpd_relay_restrictions = permit_mynetworks permit_sasl_authenticated defer_una
 alias_maps = hash:/etc/aliases
 alias_database = hash:/etc/aliases
 
-myhostname = ec2-52-27-180-204.us-west-2.compute.amazonaws.com
+myhostname = ec2-52-27-200-153.us-west-2.compute.amazonaws.com
 mydomain = us-west-2.compute.amazonaws.com
 myorigin = /etc/mailname
 
