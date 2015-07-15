@@ -19,9 +19,7 @@ class postfix {
         enable    => true,
         ensure    => running,
         require   => [ Package['postfix'],
-                       File['/etc/postfix/main.cf'],
-                       File['/etc/hosts'],
-                       File['/etc/hostname'] ],
+                       File['/etc/postfix/main.cf'] ],
         subscribe => File['/etc/postfix/main.cf'],
     }
 }
