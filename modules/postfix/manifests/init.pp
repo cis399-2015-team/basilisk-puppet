@@ -3,10 +3,6 @@ class postfix {
         'postfix': ensure => installed;
     }
 
-    package {
-        'mailutils': ensure => installed;
-    }
-
     file { '/etc/postfix/main.cf':
         source  => 'puppet:///modules/postfix/main.cf',
         mode    => 644,
