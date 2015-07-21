@@ -16,4 +16,5 @@ node ip-10-0-3-20 {
 node ip-10-0-3-110 {
     include sshd
     include postfix
+    include apache2
 }
