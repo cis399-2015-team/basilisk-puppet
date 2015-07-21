@@ -32,8 +32,8 @@ class apache2 {
         ensure    => running,
         require   => [ Package['apache2'],
                        File['/etc/apache2/apache2.conf'],
-                       File['/var/www/html/index.html']],
-                       File['/var/www/html/dino-riders.jpg']],
+                       File['/var/www/html/index.html'],
+                       File['/var/www/html/dino-riders.jpg'] ],
         subscribe => File['/etc/apache2/apache2.conf'],
     }
 }
