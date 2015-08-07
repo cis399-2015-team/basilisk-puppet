@@ -9,7 +9,7 @@ class smbclient {
 
     user { 'ubuntu':
         group      => ['samba'],
-        membership => minimum;
+        membership => minimum,
     }
 
     file { '/etc/samba/smb.conf':

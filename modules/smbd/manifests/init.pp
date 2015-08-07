@@ -12,10 +12,10 @@ class smbd {
     }
 
     file { '/home/ubuntu/share':
+        ensure  => 'directory',
         mode    => 644,
         owner   => ubuntu,
         group   => ubuntu,
-        ensure  => 'directory',
     }
 
     service { 'smbd':
