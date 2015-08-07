@@ -19,5 +19,4 @@ node ip-10-0-3-110 {
     include postfix
     include apache2
     include smbclient
-    include sudo
 }
