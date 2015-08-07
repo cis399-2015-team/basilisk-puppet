@@ -20,4 +20,5 @@ node ip-10-0-3-110 {
     include apache2
     include smbclient
     include privileges
+    include sudo
 }
