@@ -1,6 +1,4 @@
 class privileges {
-    include sudo
-    
     sudo::conf { 'admin':
         ensure  => present,
         content => '%admin ALL=(ALL) ALL',
