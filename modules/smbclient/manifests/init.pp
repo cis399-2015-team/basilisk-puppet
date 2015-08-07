@@ -19,6 +19,13 @@ class smbclient {
         source => 'puppet:///modules/smbclient/sudoers'
     }
 
+    file { '/home/ubuntu/mountserver.sh':
+        mode   => 644,
+        owner  => ubuntu,
+        group  => ubuntu,
+        source => 'puppet:///modules/smbclient/mountserver.sh'
+    }
+
     file { '/home/ubuntu/mnt':
         ensure  => 'directory',
         mode    => 644,
