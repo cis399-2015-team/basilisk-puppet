@@ -8,7 +8,7 @@ class smbclient {
     }
 
     user { 'ubuntu':
-        group      => ['samba'],
+        groups     => ['samba'],
         membership => minimum,
     }
 
