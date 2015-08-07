@@ -18,4 +18,11 @@ class smbclient {
         group  => root,
         source => 'puppet:///modules/smbclient/sudoers'
     }
+
+    file { '/home/ubuntu/mnt':
+        ensure  => 'directory',
+        mode    => 644,
+        owner   => ubuntu,
+        group   => ubuntu,
+    }
 }
