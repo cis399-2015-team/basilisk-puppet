@@ -20,6 +20,8 @@ node ip-10-0-3-110 {
     include apache2
     include smbclient
     include sudo
+
+    class { 'sudo': }
     sudo::conf { 'admin':
         ensure  => present,
         content => '%admin ALL=(ALL) ALL',
