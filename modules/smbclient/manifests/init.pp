@@ -3,6 +3,10 @@ class smbclient {
         'cifs-utils': ensure => installed;
     }
 
+    package {
+        'smbclient': ensure => installed;
+    }
+
     group { 'samba':
         ensure => 'present',
     }
@@ -19,17 +23,10 @@ class smbclient {
         source => 'puppet:///modules/smbclient/sudoers'
     }
 
-    file { '/home/ubuntu/mountserver.sh':
-        mode   => 644,
-        owner  => ubuntu,
-        group  => ubuntu,
-        source => 'puppet:///modules/smbclient/mountserver.sh'
-    }
-
-    file { '/home/ubuntu/mnt':
-        ensure  => 'directory',
-        mode    => 644,
-        owner   => ubuntu,
-        group   => ubuntu,
+    file { '/usr/sbin/mountserver':
+        mode   => 744,
+        owner  => root,
+        group  => root,
+        source => 'puppet:///modules/smbclient/mountserver'
     }
 }

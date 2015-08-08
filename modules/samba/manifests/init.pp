@@ -18,6 +18,13 @@ class smbd {
         group   => ubuntu,
     }
 
+    file { '/usr/sbin/smbadduser':
+        mode   => 755,
+        owner  => root,
+        group  => root,
+        source => 'puppet:///modules/smbclient/smbadduser'
+    }
+
     service { 'smbd':
         enable    => true,
         ensure    => running,
