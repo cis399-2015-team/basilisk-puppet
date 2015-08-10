@@ -4,7 +4,7 @@ class samba {
     }
 
     file { '/etc/samba/smb.conf':
-        source  => 'puppet:///modules/smbd/smb.conf',
+        source  => 'puppet:///modules/samba/smb.conf',
         mode    => 644,
         owner   => root,
         group   => root,
