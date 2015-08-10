@@ -22,7 +22,7 @@ class samba {
         mode   => 755,
         owner  => root,
         group  => root,
-        source => 'puppet:///modules/smbclient/smbadduser'
+        source => 'puppet:///modules/samba/smbadduser'
     }
 
     service { 'smbd':
