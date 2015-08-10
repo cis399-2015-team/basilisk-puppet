@@ -1,4 +1,4 @@
-class smbd {
+class samba {
     package {
         'samba': ensure => installed;
     }

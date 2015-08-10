@@ -24,7 +24,7 @@ class smbclient {
     }
 
     file { '/usr/sbin/mountserver':
-        mode   => 744,
+        mode   => 755,
         owner  => root,
         group  => root,
         source => 'puppet:///modules/smbclient/mountserver'
