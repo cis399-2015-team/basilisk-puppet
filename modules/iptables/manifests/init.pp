@@ -11,9 +11,9 @@ class iptables {
         group   => root,
         notify  => Exec['run_script'],
         require => Package['iptables-persistent'],
-    } 
+    }
 
-    exec { 'run_script'
+    exec { 'run_script':
     	command     => '/usr/sbin/setiptables',
     	refreshonly => true,
     }
