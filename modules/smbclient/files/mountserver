@@ -4,5 +4,5 @@ if [ $# -lt 3 ]
     then
     echo "usage: mountserver [//server/share] [/path/to/mount/dir] [username]"
 else
-    sudo mount -t cifs $1 $2 -o username=$3,noexec
+    sudo mount -t cifs $1 $2 -o username=$3,noexec,sec=ntlmv2
 fi
