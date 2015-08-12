@@ -8,6 +8,6 @@ sudo iptables -A INPUT -p tcp -s 10.0.3.0/24 --dport 22 -j ACCEPT
 sudo iptables -A INPUT -p tcp -s 10.0.3.0/24 --dport 8140 -j ACCEPT
 sudo iptables -A INPUT -p tcp -s 10.0.3.0/24 --dport 143 -j ACCEPT
 sudo iptables -A INPUT -p tcp -s 10.0.3.0/24 --dport 25 -j ACCEPT
-sudi iptables -A INPUT -j DROP
+sudo iptables -A INPUT -j DROP
 
 sudo invoke-rc.d iptables-persistent save
