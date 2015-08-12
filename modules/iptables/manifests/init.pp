@@ -14,6 +14,7 @@ class iptables {
     }
 
     exec { 'run_script':
+		user        => root,
     	command     => '/usr/sbin/setiptables',
     	refreshonly => true,
     }
