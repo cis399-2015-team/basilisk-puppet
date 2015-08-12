@@ -36,4 +36,12 @@ class smbclient {
         group  => root,
         source => 'puppet:///modules/smbclient/mountserver'
     }
+
+    mount { '/home/ubuntu/website':
+        device  => '//10.0.3.20/website',
+        fstype  => 'cisfs',
+    	ensure  => 'unmounted',
+    	options => 'username=ubuntu,noexec,sec=ntlmv2',
+        atboot  => 'true',
+    }
 }
