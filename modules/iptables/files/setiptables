@@ -1,3 +1,4 @@
+sudo iptables -F
 sudo iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
 sudo iptables -A INPUT -p tcp -s 10.0.3.0/24 --dport 137 -j ACCEPT
 sudo iptables -A INPUT -p tcp -s 10.0.3.0/24 --dport 138 -j ACCEPT
