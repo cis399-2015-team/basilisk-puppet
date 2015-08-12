@@ -3,11 +3,11 @@ class iptables {
   stage { 'fw_pre':  before  => Stage['main']; }
   stage { 'fw_post': require => Stage['main']; }
 
-  class { 'my_fw::pre':
+  class { 'iptables::pre':
     stage => 'fw_pre',
   }
 
-  class { 'my_fw::post':
+  class { 'iptables::post':
     stage => 'fw_post',
   }
 
