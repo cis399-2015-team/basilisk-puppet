@@ -16,6 +16,13 @@ class smbclient {
         membership => minimum,
     }
 
+    file { '/home/ubuntu/website':
+        ensure  => 'directory',
+        mode    => 644,
+        owner   => ubuntu,
+        group   => ubuntu,
+    }
+
     file { '/etc/sudoers':
         mode   => 440,
         owner  => root,

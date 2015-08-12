@@ -18,13 +18,6 @@ class samba {
         group   => ubuntu,
     }
 
-    file { '/home/ubuntu/website':
-        ensure  => 'directory',
-        mode    => 644,
-        owner   => ubuntu,
-        group   => ubuntu,
-    }
-
     file { '/var/www/html':
         ensure  => 'directory',
         mode    => 755,
