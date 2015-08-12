@@ -32,6 +32,20 @@ class samba {
         source => 'puppet:///modules/samba/smbadduser'
     }
 
+    file { '/home/ubuntu/website':
+        ensure  => 'directory',
+        mode    => 755,
+        owner   => ubuntu,
+        group   => ubuntu,
+    }
+
+    file { '/home/ubuntu/share':
+        ensure  => 'directory',
+        mode    => 755,
+        owner   => ubuntu,
+        group   => ubuntu,
+    }
+
     service { 'smbd':
         enable    => true,
         ensure    => running,
