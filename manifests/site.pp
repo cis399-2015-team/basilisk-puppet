@@ -12,6 +12,7 @@ node ip-10-0-3-20 {
     include sshd
     include apache2
     include samba
+    include iptables
 }
 
 node ip-10-0-3-110 {
@@ -19,4 +20,5 @@ node ip-10-0-3-110 {
     include postfix
     include apache2
     include smbclient
+    include iptables
 }
