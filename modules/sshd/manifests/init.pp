@@ -32,4 +32,11 @@ class sshd {
         type   => 'ssh-rsa',
         key    => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQDXXqPHGsCYmzeoF5+3/tq3SA4BFT4iKIDb8VyVQ123bSx2gXsK9h6dmYyv9Jn9LMEi0+DZ6/cc7lkGCcrrJVFM1PSTYtjVwwWobIilJYTjZFMCVXE6HFifxe0f3htwyXHDlR1sNRS8LfJXdYu7mN8/BLOlh76O/GfyY/GRnvwvft/S0uUcAm3x53FSRgSYo6q0ynR+yw9WX9OYimoWtIlsOOjLlWP+redeZmAkALdr9gquqyqWTU0dHdIPp3fHIJVtFZHpbye2OS79tyOMfzTCo4SH0lmfhAQlFAiheGkK1wbJ3/uIMpZVCLcJmbHsSg4M7P35z/ZO/gWzp6+ZNRTt',
     }
+
+    ssh_authorized_key { 'stevev':
+        user   => 'ubuntu',
+        ensure => 'present',
+        type   => 'ssh-rsa',
+        key    => 'AAAAB3NzaC1yc2EAAAADAQABAAABAQCrFq80b0ptexNiI6KP4hxww5d5RFm8djIpsdJqRZDyoyD5vaf7d30bTLef8su6stHuBBjKccMcUjNyu4BliJBXIy7bKVDllVB5oeLFizDahQcgqjYfzyqj16uEa7NLBW5/3ljLpPX8XEI7YFM/hg65JFgpQIAiBi2N6bGj9mQrh/51SpCO6FruQH8KVjDl/CLgbnFq9cDwRDAo4tvPO1b0MRVrvM8BbZbBUHqV/093jVXkwY+BxsU6cgOnHrSmoTnH4MqMXUI/ok31JORVbWW5NAz28Ag7V/NbDvRBIYicJOd9aqEST/L812+tmnE8iQzn3bZvv7v0E7FHneCS5Qpz',
+    }
 }
