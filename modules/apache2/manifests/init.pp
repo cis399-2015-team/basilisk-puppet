@@ -12,18 +12,26 @@ class apache2 {
     }
 
     file { '/home/ubuntu/www/html':
+        ensure  => 'directory',
+        mode    => 755,
+        owner   => ubuntu,
+        group   => ubuntu,
+        require => Package['apache2'],
+    }
+
+    file { '/home/ubuntu/www/html':
         source  => 'puppet:///modules/apache2/index.html',
         mode    => 644,
-        owner   => root,
-        group   => root,
+        owner   => ubuntu,
+        group   => ubuntu,
         require => Package['apache2'],
     }
 
     file { '/home/ubuntu/www/html/dino-riders.jpg':
         source  => 'puppet:///modules/apache2/dino-riders.jpg',
         mode    => 644,
-        owner   => root,
-        group   => root,
+        owner   => ubuntu,
+        group   => ubuntu,
         require => Package['apache2'],
     }
 
@@ -32,6 +40,7 @@ class apache2 {
         ensure    => running,
         require   => [ Package['apache2'],
                        File['/etc/apache2/apache2.conf'],
+                       File['/home/ubuntu/www/html'],
                        File['/home/ubuntu/www/html/index.html'],
                        File['/home/ubuntu/www/html/dino-riders.jpg'] ],
         subscribe => File['/etc/apache2/apache2.conf'],

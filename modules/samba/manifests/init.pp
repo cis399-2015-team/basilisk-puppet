@@ -11,20 +11,6 @@ class samba {
         require => Package['samba'],
     }
 
-    file { '/home/ubuntu/share':
-        ensure  => 'directory',
-        mode    => 644,
-        owner   => ubuntu,
-        group   => ubuntu,
-    }
-
-    file { '/var/www/html':
-        ensure  => 'directory',
-        mode    => 755,
-        owner   => root,
-        group   => root,
-    }
-
     file { '/usr/sbin/smbadduser':
         mode   => 755,
         owner  => root,
@@ -36,9 +22,7 @@ class samba {
         enable    => true,
         ensure    => running,
         require   => [ Package['samba'],
-                       File['/etc/samba/smb.conf'],
-                       File['/home/ubuntu/share'],
-                       File['/var/www/html'] ],
+                       File['/etc/samba/smb.conf'] ]
         subscribe => File['/etc/samba/smb.conf'],
     }
 }
