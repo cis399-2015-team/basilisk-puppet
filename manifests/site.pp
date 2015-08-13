@@ -22,3 +22,16 @@ node ip-10-0-3-110 {
     include smbclient
     include samba_firewall
 }
+
+resources { 'firewall':
+  purge => true,
+}
+
+Firewall {
+  before  => Class['samba_firewall::post'],
+  require => Class['samba_firewall::pre'],
+}
+
+class { ['samba_firewall::pre', 'samba_firewall::post']: }
+
+class { 'firewall': }
