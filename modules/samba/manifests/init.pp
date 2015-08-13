@@ -22,7 +22,7 @@ class samba {
         enable    => true,
         ensure    => running,
         require   => [ Package['samba'],
-                       File['/etc/samba/smb.conf'] ]
+                       File['/etc/samba/smb.conf'] ],
         subscribe => File['/etc/samba/smb.conf'],
     }
 }
