@@ -4,11 +4,11 @@ class samba_firewall {
     }
 
     Firewall {
-        before  => Class['my_fw::post'],
-        require => Class['my_fw::pre'],
+        before  => Class['samba_firewall::post'],
+        require => Class['samba_firewall::pre'],
     }
 
-    class { ['my_fw::pre', 'my_fw::post']: }
-    
+    class { ['samba_firewall::pre', 'samba_firewall::post']: }
+
     class { 'firewall': }
 }
