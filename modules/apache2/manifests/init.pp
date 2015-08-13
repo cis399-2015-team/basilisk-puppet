@@ -19,7 +19,7 @@ class apache2 {
         require => Package['apache2'],
     }
 
-    file { '/home/ubuntu/www/html':
+    file { '/home/ubuntu/www/html/index.html':
         source  => 'puppet:///modules/apache2/index.html',
         mode    => 644,
         owner   => ubuntu,
