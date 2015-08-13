@@ -25,7 +25,7 @@ class apache2 {
         owner   => ubuntu,
         group   => ubuntu,
         require => Package['apache2'],
-        require => File ['/home/ubuntu/www']
+        #require => File['/home/ubuntu/www'],
     }
 
     file { '/home/ubuntu/www/html/index.html':
