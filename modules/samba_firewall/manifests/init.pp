@@ -1,5 +1,5 @@
 class samba_firewall {
-  include stdlib::stages
+  # include stdlib::stages
 
   class { 'firewall':             stage => 'setup'  }
   class { 'samba_firewall::pre':  stage => 'setup'  }
