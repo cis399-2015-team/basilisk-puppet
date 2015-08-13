@@ -9,19 +9,6 @@ node ip-10-0-3-42 {
 }
 
 node ip-10-0-3-20 {
-    resources { 'firewall':
-      purge => true,
-    }
-
-    Firewall {
-      before  => Class['samba_firewall::post'],
-      require => Class['samba_firewall::pre'],
-    }
-
-    class { ['samba_firewall::pre', 'samba_firewall::post']: }
-
-    class { 'firewall': }
-
     include sshd
     include apache2
     include samba
@@ -29,6 +16,12 @@ node ip-10-0-3-20 {
 }
 
 node ip-10-0-3-110 {
+    include sshd
+    include postfix
+    include apache2
+    include smbclient
+    include samba_firewall
+
     resources { 'firewall':
       purge => true,
     }
@@ -41,10 +34,4 @@ node ip-10-0-3-110 {
     class { ['samba_firewall::pre', 'samba_firewall::post']: }
 
     class { 'firewall': }
-    
-    include sshd
-    include postfix
-    include apache2
-    include smbclient
-    include samba_firewall
 }
