@@ -1,6 +1,6 @@
 #! /bin/bash
 # Creates a samba user account with the provided username and a random password
-# that must be changed the first time the user logs in.
+# that must be changed the before the user can login.
 
 if [ $# -eq 0 ]
     then

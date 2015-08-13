@@ -16,13 +16,6 @@ class smbclient {
         membership => minimum,
     }
 
-    file { '/home/ubuntu/website':
-        ensure  => 'directory',
-        mode    => 644,
-        owner   => ubuntu,
-        group   => ubuntu,
-    }
-
     file { '/etc/sudoers':
         mode   => 440,
         owner  => root,
@@ -30,11 +23,11 @@ class smbclient {
         source => 'puppet:///modules/smbclient/sudoers'
     }
 
-    file { '/usr/sbin/mountserver':
-        mode   => 755,
-        owner  => root,
-        group  => root,
-        source => 'puppet:///modules/smbclient/mountserver'
+    file { '/home/ubuntu/website':
+        ensure  => 'directory',
+        mode    => 644,
+        owner   => ubuntu,
+        group   => ubuntu,
     }
 
     mount { '/home/ubuntu/website':
