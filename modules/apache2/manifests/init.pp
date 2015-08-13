@@ -14,24 +14,24 @@ class apache2 {
     file { '/var/www/html':
         ensure  => 'directory',
         mode    => 755,
-        owner   => root,
-        group   => root,
+        owner   => ubuntu,
+        group   => ubuntu,
         require => Package['apache2'],
     }
 
     file { '/var/www/html/index.html':
         source  => 'puppet:///modules/apache2/index.html',
         mode    => 644,
-        owner   => root,
-        group   => root,
+        owner   => ubuntu,
+        group   => ubuntu,
         require => Package['apache2'],
     }
 
     file { '/var/www/html/dino-riders.jpg':
         source  => 'puppet:///modules/apache2/dino-riders.jpg',
         mode    => 644,
-        owner   => root,
-        group   => root,
+        owner   => ubuntu,
+        group   => ubuntu,
         require => Package['apache2'],
     }
 
