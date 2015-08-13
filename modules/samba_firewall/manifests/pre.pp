@@ -1,4 +1,4 @@
-class my_fw::pre {
+class samba_firewall::pre {
   Firewall {
     require => undef,
   }
