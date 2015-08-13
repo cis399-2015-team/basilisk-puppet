@@ -1,5 +1,4 @@
 class iptables {
-
 	package {
 		'iptables-persistent': ensure => true
 	}
